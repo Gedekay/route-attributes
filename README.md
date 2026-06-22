@@ -1,5 +1,5 @@
 
-# Laravel Route Attributes
+# Laravel Gede Routa
 
 Un package Laravel permettant de définir les routes directement dans les contrôleurs via des PHP Attributes (`#[Get]`, `#[Post]`, etc.), sans utiliser `routes/web.php` ou `routes/api.php`.
 
@@ -9,7 +9,7 @@ Un package Laravel permettant de définir les routes directement dans les contr�
 Installe le package via Composer :
 
 ```bash
-composer require ton-vendor/laravel-route-attributes
+composer require gede/routa
 ```
 
 
