@@ -1,5 +1,5 @@
 {
-  "name": "ton-vendor/laravel-route-attributes",
+  "name": "gede/routa",
   "description": "Route attributes for Laravel",
   "type": "library",
   "autoload": {
@@ -7,6 +7,7 @@
       "RouteAttributes\\": "src/"
     }
   },
+  "license": "MIT",
   "require": {
   "php": "^8.1",
   "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
