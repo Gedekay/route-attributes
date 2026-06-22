@@ -12,13 +12,27 @@ use RouteAttributes\Attributes\Delete;
 
 class RouteScanner
 {
-    public static function scan(string $path, string $namespace)
+    public static function scan(string $path, string $baseNamespace)
     {
-        $files = glob($path . '/*.php');
+        $files = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($path)
+        );
 
         foreach ($files as $file) {
 
-            $class = $namespace . '\\' . basename($file, '.php');
+            if (!$file->isFile() || $file->getExtension() !== 'php') {
+                continue;
+            }
+
+            
+            $class = str_replace(
+                [$path, '/', '.php'],
+                [$baseNamespace, '\\', ''],
+                $file->getPathname()
+            );
+
+          
+            $class = preg_replace('/\\\\+/', '\\', $class);
 
             if (!class_exists($class)) {
                 continue;
@@ -28,54 +42,41 @@ class RouteScanner
 
             foreach ($reflection->getMethods() as $method) {
 
+                // GET
                 foreach ($method->getAttributes(Get::class) as $attribute) {
-
                     $route = $attribute->newInstance();
 
-                    Route::get(
-                        $route->uri,
-                        [$class, $method->getName()]
-                    )->name($route->name);
+                    Route::get($route->uri, [$class, $method->getName()])
+                        ->name($route->name);
                 }
 
+                // POST
                 foreach ($method->getAttributes(Post::class) as $attribute) {
-
                     $route = $attribute->newInstance();
 
-                    Route::post(
-                        $route->uri,
-                        [$class, $method->getName()]
-                    )->name($route->name);
+                    Route::post($route->uri, [$class, $method->getName()])
+                        ->name($route->name);
                 }
 
                 foreach ($method->getAttributes(Put::class) as $attribute) {
-
                     $route = $attribute->newInstance();
 
-                    Route::put(
-                        $route->uri,
-                        [$class, $method->getName()]
-                    )->name($route->name);
+                    Route::put($route->uri, [$class, $method->getName()])
+                        ->name($route->name);
                 }
 
                 foreach ($method->getAttributes(Patch::class) as $attribute) {
-
                     $route = $attribute->newInstance();
 
-                    Route::patch(
-                        $route->uri,
-                        [$class, $method->getName()]
-                    )->name($route->name);
+                    Route::patch($route->uri, [$class, $method->getName()])
+                        ->name($route->name);
                 }
 
                 foreach ($method->getAttributes(Delete::class) as $attribute) {
-
                     $route = $attribute->newInstance();
 
-                    Route::delete(
-                        $route->uri,
-                        [$class, $method->getName()]
-                    )->name($route->name);
+                    Route::delete($route->uri, [$class, $method->getName()])
+                        ->name($route->name);
                 }
             }
         }
