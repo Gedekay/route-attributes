@@ -1,9 +1,8 @@
-```markdown
+
 # Laravel Route Attributes
 
 Un package Laravel permettant de définir les routes directement dans les contrôleurs via des PHP Attributes (`#[Get]`, `#[Post]`, etc.), sans utiliser `routes/web.php` ou `routes/api.php`.
 
----
 
 ##  Installation
 
@@ -13,7 +12,7 @@ Installe le package via Composer :
 composer require ton-vendor/laravel-route-attributes
 ```
 
----
+
 
 ##  Configuration
 
