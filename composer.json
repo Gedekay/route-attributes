@@ -1,0 +1,21 @@
+{
+  "name": "ton-vendor/laravel-route-attributes",
+  "description": "Route attributes for Laravel",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "RouteAttributes\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^10.0|^11.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RouteAttributes\\RouteAttributesServiceProvider"
+      ]
+    }
+  }
+}
