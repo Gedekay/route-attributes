@@ -3,7 +3,7 @@
 
 Un package Laravel permettant de définir les routes directement dans les contrôleurs via des PHP Attributes (`#[Get]`, `#[Post]`, etc.), sans utiliser `routes/web.php` ou `routes/api.php`.
 
-## 📦 Installation
+##  Installation
 
 Installe le package via Composer :
 
@@ -212,20 +212,6 @@ Ce package :
 - Peut nécessiter un cache optimisé pour les gros projets
 - Nécessite PHP 8.0 ou supérieur
 
----
-
-## 🗺️ Roadmap (idées futures)
-
-- [x] `#[Prefix('/api')]` - Préfixe de route 
-- [x] `#[Middleware('auth')]` - Middleware associé 
-- [ ] `#[Name('users.')]` - Nom de route
-- [ ] Cache des routes (commande artisan)
-- [ ] Support des Resource Controllers
-- [ ] Scan optimisé (performance)
-- [ ] Support des groupes de routes
-- [ ] Validation automatique des paramètres
-
----
 
 ##  Contribution
 
