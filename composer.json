@@ -1,5 +1,5 @@
 {
-  "name": "laravel/routing-at",
+  "name": "laravel/routex",
   "description": "Route attributes for Laravel",
   "type": "library",
   "autoload": {
