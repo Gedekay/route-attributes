@@ -1,5 +1,5 @@
 {
-  "name": "gede/routa",
+  "name": "laravel/routing",
   "description": "Route attributes for Laravel",
   "type": "library",
   "autoload": {
