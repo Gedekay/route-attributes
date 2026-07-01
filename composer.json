@@ -1,5 +1,5 @@
 {
-  "name": "kay/routing",
+  "name": "kaye/routing",
   "description": "Route attributes for Laravel",
   "type": "library",
   "autoload": {
