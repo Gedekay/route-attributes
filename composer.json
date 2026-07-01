@@ -1,5 +1,5 @@
 {
-  "name": "laravel/routex",
+  "name": "kay/routing",
   "description": "Route attributes for Laravel",
   "type": "library",
   "autoload": {
