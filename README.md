@@ -1,5 +1,5 @@
 
-# laravel routex
+# kay routing
 
 Un package Laravel permettant de définir les routes directement dans les contrôleurs via des PHP Attributes (`#[Get]`, `#[Post]`, etc.), sans utiliser `routes/web.php` ou `routes/api.php`.
 
@@ -8,7 +8,7 @@ Un package Laravel permettant de définir les routes directement dans les contr�
 Installe le package via Composer :
 
 ```bash
-composer require laravel/routex
+composer require kay/routing
 ```
 
 ##  Configuration
